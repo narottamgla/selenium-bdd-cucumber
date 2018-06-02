@@ -38,5 +38,19 @@
 * In "Available plugins" tab, perform serach for "Pipeline Maven Integration" and install
 * Follwing above steps, install "HTML Publisher" plugin
 ## Setting up Java-jdk and maven
-* 
+* Navigate to "Manage jenkins->Global Tool configuration"
+* Configure java-jdk & maven with java8 & maven_3_5_0 name respectivelly
+## Global configuration for Github
+* Navigate to "Manage jenkins->Configure System" and in Github section configure github credentials
+## Creating jenkins pipe line
+* Navigate to "https://github.com/narottamgla/selenium-bdd-cucumber/blob/master/Jenkinsfile" and have similar file in github root
+* Now navigate to click New Item and create pipeline type of job
+* Now navigate to pipeline section of job and select "Pipeline script from SCM"
+* Enter repositary url and select github credentials and keep other details default
+* Save the changes
+
+## Running created pipeline
+* Click build now and execution will be started
+* Pipeline steps will be displayed on jenkins screen
+* Once execution finish, Click on "HTML Report" tab to view serenity HTML Reports
 
