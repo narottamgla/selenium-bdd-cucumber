@@ -23,3 +23,20 @@
 ## View HTML Report
 * HTML report will be generated once execution finish -bdd-cucumber\target\site\serenity
 * Open Index.html in browser to see the reports
+
+# Setting jenkins pipeline for Selenium(Cucumber serenity project)
+* This project is example how can setup jenkins pipeline for selenium project step by step
+## Setup
+* Download latest jenkins.war [Jenkins download link](https://updates.jenkins-ci.org/download/war/)
+* Start jenkins.jar on default port using command 'java -jar jenkins.war'
+* Start jenkins.jar on specific port using command 'java -jar jenkins.war --httpPort=portnumber'
+* Open localhost:portnumber and login using displayed insructions on browser screens
+* Now install all default plugin and set user & password
+## Installing required plugins
+* Navigate to jenkins home and click on "Manage jenkins" tab
+* Now click on "Manage plugins"
+* In "Available plugins" tab, perform serach for "Pipeline Maven Integration" and install
+* Follwing above steps, install "HTML Publisher" plugin
+## Setting up Java-jdk and maven
+* 
+
