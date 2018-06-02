@@ -1,0 +1,30 @@
+repositories {
+    jcenter()
+    mavenLocal()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:1.8.3")
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    compile 'net.serenity-bdd:serenity-core:1.8.3'
+    compile 'net.serenity-bdd:serenity-cucumber:1.6.6'
+    testCompile('junit:junit:4.12')
+    compile('org.assertj:assertj-core:3.8.0')
+}
+gradle.startParameter.continueOnFailure = true
