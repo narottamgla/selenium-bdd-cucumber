@@ -11,11 +11,20 @@ pipeline {
             }
         }
 
-        stage ('Testing Stage') {
+        stage ('Testing Stage:Default browser') {
 
             steps {
                 withMaven(maven : 'maven_3_5_0') {
                     bat 'mvn verify'
+                }
+            }
+        }
+        
+         stage ('Testing Stage: Chrome and Firefox') {
+
+            steps {
+                withMaven(maven : 'maven_3_5_0') {
+                    bat 'mvn verify -Dcontext=chrome -Dwebdriver.driver=chrome'
                 }
             }
         }
