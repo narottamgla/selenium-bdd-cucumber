@@ -17,8 +17,8 @@
 * Install "natural plugin" using eclipse marketplace 
 
 ## Run tests:
-* `mvn clean test site` - Run test scripts using Chrome browser.
+* `mvn clean verify` - Run test scripts using Chrome browser.
 
 ## View HTML Report
-* HTML report will be generated once execution finish -\oasisdex\target\site\allure-maven-plugin
-* Open Index.html in firefox browser to see the reports
+* HTML report will be generated once execution finish -bdd-cucumber\target\site\serenity
+* Open Index.html in browser to see the reports
