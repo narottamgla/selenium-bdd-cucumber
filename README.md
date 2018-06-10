@@ -24,6 +24,8 @@
 * HTML report will be generated once execution finish -bdd-cucumber\target\site\serenity
 * Open Index.html in browser to see the reports
 
+## Run tests in parallel:
+* TBD
 # Setting jenkins pipeline for Selenium(Cucumber serenity project)
 * This project is example how can setup jenkins pipeline for selenium project step by step
 ## Setup
