@@ -1,35 +1,24 @@
 package com.uiautomation.pages;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.openqa.selenium.WebElement;
 
 import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
+import net.thucydides.core.annotations.WhenPageOpens;
 
-@DefaultUrl("http://www.google.com")
+@DefaultUrl("https://google.com")
 public class GoogleSearchPage extends PageObject {
+	@FindBy(id = "lst-ib")
+	private WebElement searchInputField;
 
-	@FindBy(name = "q")
-	private WebElement searchTxBx;
-
-	@FindBy(css = "#search h3 a")
-	private List<WebElement> searchResults;
-
-	public void performSearch(String searchKeyword) {
-		waitFor(searchTxBx);
-		searchTxBx.clear();
-		searchTxBx.sendKeys(searchKeyword);
-		searchTxBx.submit();
+	@WhenPageOpens
+	public void waitUntilGoogleLogoAppears() {
+		$("#hplogo").waitUntilVisible();
 	}
 
-	public List<String> getSearchResultList() {
-		List<String> results = new ArrayList<>();
-		for (WebElement result : searchResults) {
-			results.add(result.getText().toLowerCase());
-		}
-		return results;
+	public void searchFor(String searchRequest) {
+		element(searchInputField).clear();
+		element(searchInputField).typeAndEnter(searchRequest);
 	}
 }
