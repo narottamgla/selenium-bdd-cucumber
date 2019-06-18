@@ -9,7 +9,7 @@ import net.thucydides.core.annotations.WhenPageOpens;
 
 @DefaultUrl("https://google.com")
 public class GoogleSearchPage extends PageObject {
-	@FindBy(id = "lst-ib")
+	@FindBy(name = "q")
 	private WebElement searchInputField;
 
 	@WhenPageOpens
